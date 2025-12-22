@@ -18,12 +18,12 @@ public class BookingListFrame extends JFrame {
         List<BookingModel> list = BookingStorage.load();
 
         DefaultTableModel model = new DefaultTableModel(
-                new String[]{"Nama", "HP", "Tanggal", "Jam", "Lapangan"}, 0
+                new String[]{"Nama", "No HP", "Tanggal", "Jam", "Lapangan"}, 0
         );
 
         JTable table = new JTable(model);
         table.setRowHeight(28);
-        table.getTableHeader().setBackground(new Color(225, 232, 225));
+        table.getTableHeader().setBackground(new Color(64, 66, 64));
         table.getTableHeader().setForeground(Color.WHITE);
 
         DateTimeFormatter formatter =

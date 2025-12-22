@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DashboardFrame extends JFrame {
 
-    Color GREEN = new Color(63, 234, 143);
+    Color GREEN = new Color(5, 246, 115);
     Color LIGHT = new Color(245,255,245);
 
     public DashboardFrame(String role) {

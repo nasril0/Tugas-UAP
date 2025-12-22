@@ -10,7 +10,7 @@ public class BookingFormFrame extends JFrame {
 
     public BookingFormFrame(List<BookingModel> list, BookingModel data, int index) {
 
-        Color GREEN = new Color(34,139,34);
+        Color GREEN = new Color(7, 248, 7);
         Color LIGHT = new Color(245,255,245);
 
         setTitle(data == null ? "Tambah Booking" : "Edit Booking");
@@ -19,7 +19,7 @@ public class BookingFormFrame extends JFrame {
 
         JTextField nama = new JTextField();
         JTextField hp   = new JTextField();
-        JTextField tgl  = new JTextField("01-01-2025");
+        JTextField tgl  = new JTextField();
 
         String[] JAM_SLOT = {
                 "08:00 - 09:00",
@@ -52,9 +52,33 @@ public class BookingFormFrame extends JFrame {
 
         JButton save = new JButton(data == null ? "Simpan" : "Update");
         save.setBackground(GREEN);
-        save.setForeground(Color.WHITE);
+        save.setForeground(Color.black);
 
         save.addActionListener(e -> {
+
+            if (nama.getText().trim().isEmpty() ||
+                    hp.getText().trim().isEmpty() ||
+                    tgl.getText().trim().isEmpty()) {
+
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Semua field wajib diisi",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+
+            if (!hp.getText().matches("\\d+")) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "No HP harus berupa angka",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+
             try {
                 BookingModel b = new BookingModel(
                         nama.getText(),
@@ -80,6 +104,7 @@ public class BookingFormFrame extends JFrame {
                 );
             }
         });
+
 
         JPanel p = new JPanel(new GridLayout(6,2,10,10));
         p.setBackground(LIGHT);

@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class LoginFrame extends JFrame {
 
-    Color GREEN = new Color(113, 212, 214);
-    Color LIGHT = new Color(245,255,245);
+    Color GREEN = new Color(117, 228, 228);
+    Color LIGHT = new Color(149, 237, 244);
 
     public LoginFrame() {
         setTitle("Football Arena Login");
@@ -31,9 +31,9 @@ public class LoginFrame extends JFrame {
         JButton admin = new JButton("Login Admin");
         JButton guest = new JButton("Login Customer");
 
-        admin.setBackground(GREEN);
+        admin.setBackground(Color.GREEN);
         admin.setForeground(Color.WHITE);
-        guest.setBackground(Color.DARK_GRAY);
+        guest.setBackground(Color.gray);
         guest.setForeground(Color.WHITE);
 
         admin.addActionListener(e -> {
