@@ -26,7 +26,7 @@ public class DashboardFrame extends JFrame {
                 JLabel.CENTER
         );
         title.setFont(new Font("Arial", Font.BOLD, 18));
-        title.setForeground(GREEN);
+        title.setForeground(Color.BLACK);
 
         JButton input = new JButton("Input Booking");
         JButton listBtn = new JButton("List Booking");
