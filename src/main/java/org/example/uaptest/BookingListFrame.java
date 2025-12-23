@@ -78,7 +78,7 @@ public class BookingListFrame extends JFrame {
             top.add(del);
         }
 
-        add(top, BorderLayout.NORTH);
+        add(top, BorderLayout.SOUTH);
         add(new JScrollPane(table), BorderLayout.CENTER);
     }
 }
